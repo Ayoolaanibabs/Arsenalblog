@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+<body>
+    <div class="page-header">
+        <a href="{% url 'post_new' %}">new</a>
+        <h1><a href="/">Arsenal Blog</a>></h1>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
