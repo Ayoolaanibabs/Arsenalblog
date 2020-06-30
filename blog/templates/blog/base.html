@@ -6,7 +6,9 @@
     <body>
 <body>
     <div class="page-header">
+        {% if user.is_authenticated %}
         <a href="{% url 'post_new' %}">new</a>
+        {% endif %}
         <h1><a href="/">Arsenal Blog</a>></h1>
     </div>
     <div class="content container">
