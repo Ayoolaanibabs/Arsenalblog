@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig'
+    'blog.apps.BlogConfig',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,19 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# Adding the google OAuth2 authentication for backend
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'AIzaSyDUvbDvUvDt4XdSxdwvWEtNshB_JlB_ndk'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '70hbfuLqaBoQ4LRFOeWyPG7J'
+
+LOGIN_URL = '/auth/login/google-oauth2/'
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
